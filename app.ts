@@ -3,20 +3,26 @@
  import { NgFor } from "angular2/common";
 
 @Component({
-    selector: "hello-world",
+    selector: "reddit",
     template: `
-    <ul>
-        <li *ngFor="#name of names"> Hello {{ name }} </li>
-    </ul>
+    <form class="ui large form segment">
+        <h3 class="ui header">Add a Link</h3>
+
+        <div class="field">
+            <label for="title">Title</label>
+            <input name="title">
+        </div>
+        <div class="field">
+            <label for="link">Link:</label>
+            <input name="link">
+        </div>
+    </form>
     `
 })
 
-class HelloWorld {
-    name: string[];
-
+class RedditApp {
     constructor() {
-        this.name = ['john', 'ariadne', 'lucy', 'Mayoya', 'Mikey'];
     }
 }
 
-bootstrap(HelloWorld);
+bootstrap(RedditApp);
